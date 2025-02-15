@@ -165,7 +165,7 @@ export default class GHSyncPlugin extends Plugin {
 		}
 	}
 
-	async onload() {
+	async delayLoad() {
 		await this.loadSettings();
 
 		const ribbonIconEl = this.addRibbonIcon(
@@ -234,6 +234,12 @@ export default class GHSyncPlugin extends Plugin {
 			// don't care
 			// based
 		}
+	}
+
+	async onload() {
+		setTimeout(() => {
+			this.delayLoad();
+		}, 5000);
 	}
 
 	onunload() {}
