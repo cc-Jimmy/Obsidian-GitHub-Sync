@@ -169,14 +169,14 @@ export default class GHSyncPlugin extends Plugin {
 	async delayLoad() {
 		await this.loadSettings();
 
-		const ribbonIconEl = this.addRibbonIcon(
-			"github",
-			"Sync with Remote",
-			(evt: MouseEvent) => {
-				this.SyncNotes();
-			}
-		);
-		ribbonIconEl.addClass("gh-sync-ribbon");
+		// const ribbonIconEl = this.addRibbonIcon(
+		// 	"github",
+		// 	"Sync with Remote",
+		// 	(evt: MouseEvent) => {
+		// 		this.SyncNotes();
+		// 	}
+		// );
+		// ribbonIconEl.addClass("gh-sync-ribbon");
 
 		this.addCommand({
 			id: "github-sync-command",
