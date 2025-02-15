@@ -165,6 +165,7 @@ export default class GHSyncPlugin extends Plugin {
 		}
 	}
 
+	// 延迟加载
 	async delayLoad() {
 		await this.loadSettings();
 
