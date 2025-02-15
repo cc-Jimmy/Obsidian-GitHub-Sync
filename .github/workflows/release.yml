@@ -22,6 +22,12 @@ jobs:
                   npm install
                   npm run build
 
+            - name: Package plugin
+              run: |
+                  mkdir github-sync
+                  cp main.js manifest.json styles.css github-sync/
+                  zip -r github-sync.zip github-sync/
+
             - name: Create release
               env:
                   GITHUB_TOKEN: ${{ secrets.TOKEN }}
@@ -31,4 +37,4 @@ jobs:
                   gh release create "$tag" \
                     --title="$tag" \
                     --draft \
-                    main.js manifest.json styles.css
+                    github-sync.zip
