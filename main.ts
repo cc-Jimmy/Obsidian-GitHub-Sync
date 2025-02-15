@@ -165,7 +165,10 @@ export default class GHSyncPlugin extends Plugin {
 		}
 	}
 
+<<<<<<< Updated upstream
 	// 延迟加载
+=======
+>>>>>>> Stashed changes
 	async delayLoad() {
 		await this.loadSettings();
 
